@@ -19,10 +19,14 @@ public class PlayerControls : MonoBehaviour
     // para ser usado em superficies liquidas como agua, lama e etc...
     public LayerMask whatIsGround;
     //temporazidores de salto
+    [SerializeField]
     private float jumpTimer;
     public float jumpTime;
     //previne double jumps
-    private bool IsPlayerJumping; 
+    [SerializeField]
+    private bool IsPlayerJumping;
+    [SerializeField]
+    private bool isFacingRight = true;
 
 
     void Start()
@@ -63,5 +67,11 @@ public class PlayerControls : MonoBehaviour
 
         }
     }
-    
+    /*
+    private void Flip() serve para dar flip do gun point (jogador nao disparar em si próprio)
+    {
+        isFacingRight = !isFacingRight;
+        transform.Rotate(0f, 180, 0f);
+    }
+    */
 }

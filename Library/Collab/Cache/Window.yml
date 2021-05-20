@@ -14,18 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scripts/Blob_Enemy(unused).cs
-    - Assets/Scripts/Blob_Enemy(unused).cs.meta
-    - Assets/Scripts/Enemy.meta
-    - Assets/Scripts/Enemy/EnemyAI.cs
-    - Assets/Scripts/Enemy/EnemyAI.cs.meta
-    - Assets/Scripts/NewBehaviourScript.cs
-    - Assets/Scripts/NewBehaviourScript.cs.meta
-    - Assets/Scripts/Player.meta
-    - Assets/Scripts/Player/PlayerControls.cs
-    - Assets/Scripts/Player/PlayerControls.cs.meta
     - 
-    m_Values: 0101010101010101010101
+    m_Values: 01
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
