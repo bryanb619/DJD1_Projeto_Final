@@ -25,8 +25,10 @@ public class PlayerControls : MonoBehaviour
     //previne double jumps
     [SerializeField]
     private bool IsPlayerJumping;
+    /* flip do jogador
     [SerializeField]
     private bool isFacingRight = true;
+    */
 
 
     void Start()
