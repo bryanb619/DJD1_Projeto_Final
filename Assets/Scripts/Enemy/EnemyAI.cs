@@ -2,33 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 /* 
-Código geral dos inimgos
+Código geral dos inimigos
 neste momento só há o inimigo "enemy_01"*/
 public class EnemyAI : MonoBehaviour
 {   // velocidade do inimigo_01
-    public float speed = 2f;
+    [SerializeField] private float speed;
     // adiciona velocidade
     public Rigidbody2D rb;
     // Layer do ground
     public LayerMask groundLayers;
+    // transform dentro do unity
     public Transform groundCheck;
-    //
     bool isFacingRight = true;
 
     // da informação sobre o que deu "hit", em que colidiu
-    // previne queda da plataforma
-    RaycastHit2D hit;
+    // previni queda da plataforma
+    RaycastHit2D noGround;
 
     private void Update()
     {   // faz raycast para baixo, para ver se atinge Ground
-        hit = Physics2D.Raycast(groundCheck.position, -transform.up, 1f, groundLayers);
+    
+        noGround = Physics2D.Raycast(groundCheck.position, -transform.up, 1f, groundLayers);
 
     }
 
     private void FixedUpdate()
     {
 
-        if(hit.collider != false)
+        if(noGround.collider != false)
         {   // muda a direção do inimigo_01 sempre que atinge o limite
            if (isFacingRight)
            {

@@ -52,3 +52,12 @@ TagManager:
   - name: Player
     uniqueID: 443479197
     locked: 0
+  - name: UI
+    uniqueID: 381739103
+    locked: 0
+  - name: New Layer
+    uniqueID: 105773603
+    locked: 0
+  - name: PauseMenu
+    uniqueID: 227474023
+    locked: 0

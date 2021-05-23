@@ -48,7 +48,6 @@
      <Compile Include="Assets\Scripts\PauseMenu\PausedMenuScript.cs" />
      <Compile Include="Assets\Scripts\Player\fireSpeed.cs" />
      <Compile Include="Assets\Scripts\Camera_Script\Camera_Follow.cs" />
-     <Compile Include="Assets\Scripts\Player\Health\PlayerHealth.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
