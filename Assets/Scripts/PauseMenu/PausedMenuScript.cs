@@ -7,6 +7,7 @@ public class PausedMenuScript : MonoBehaviour
     //Checar pelo estado do jogo (paused ou não "true ou false")
     [SerializeField] GameObject pausemenu;
     public static bool GameisPaused = false;
+   // public GameObject pausemenu;
 
     // Update is called once per frame
     void Update()
@@ -37,18 +38,19 @@ public class PausedMenuScript : MonoBehaviour
         pausemenu.SetActive(true);
         Time.timeScale = 0f;
         GameisPaused = true;
-
     }
 
     // butões do pause mennu
-    void MainMenu()
+    public void MainMenu()
     {
-        
+        Debug.Log("Loading menu...");
     }
 
-    void EXIT()
+   public void EXIT()
     {
         Application.Quit();
+        // Para saber se funciona, remover este código em versão futura
+        Debug.Log("Game has exitted");
     }
 
 

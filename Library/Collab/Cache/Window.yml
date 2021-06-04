@@ -59,9 +59,29 @@ MonoBehaviour:
     - Assets/Sprites/Player_Sprite/Iddle/Sophieprofile_idle_500.png.meta
     - Packages/manifest.json
     - Packages/packages-lock.json
+<<<<<<< Updated upstream
+=======
+    - ProjectSettings/AudioManager.asset
+    - ProjectSettings/ClusterInputManager.asset
+    - ProjectSettings/DynamicsManager.asset
+    - ProjectSettings/EditorBuildSettings.asset
+    - ProjectSettings/EditorSettings.asset
+    - ProjectSettings/GraphicsSettings.asset
+    - ProjectSettings/InputManager.asset
+    - ProjectSettings/NavMeshAreas.asset
+    - ProjectSettings/Physics2DSettings.asset
+    - ProjectSettings/PresetManager.asset
+    - ProjectSettings/ProjectSettings.asset
+    - ProjectSettings/ProjectVersion.txt
+    - ProjectSettings/QualitySettings.asset
+>>>>>>> Stashed changes
     - ProjectSettings/TagManager.asset
     - 
+<<<<<<< Updated upstream
     m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+=======
+    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+>>>>>>> Stashed changes
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
