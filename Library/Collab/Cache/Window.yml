@@ -14,27 +14,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - .collabignore
+    - Assets/ERP.meta
+    - Assets/ERP/CHANGELOG.MD.meta
+    - Assets/ERP/Documentation.meta
+    - Assets/ERP/Documentation/Editor Rich Presence Documentation.pdf.meta
+    - Assets/ERP/Editor/ERP.cs.meta
+    - Assets/ERP/Editor/ERPSettings.cs.meta
+    - Assets/ERP/Editor/ERPWindow.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/ActivityManager.cs
+    - Assets/ERP/Editor/Plugins/DiscordSDK/ActivityManager.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/Constants.cs
+    - Assets/ERP/Editor/Plugins/DiscordSDK/Constants.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/Core.cs
+    - Assets/ERP/Editor/Plugins/DiscordSDK/Core.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/ImageManager.cs
+    - Assets/ERP/Editor/Plugins/DiscordSDK/ImageManager.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/LobbyManager.cs
+    - Assets/ERP/Editor/Plugins/DiscordSDK/LobbyManager.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/StorageManager.cs
+    - Assets/ERP/Editor/Plugins/DiscordSDK/StorageManager.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/StoreManager.cs
+    - Assets/ERP/Editor/Plugins/DiscordSDK/StoreManager.cs.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/x86.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/x86/discord_game_sdk.dll.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/x86_64.meta
+    - Assets/ERP/Editor/Plugins/DiscordSDK/x86_64/discord_game_sdk.dll.meta
+    - Assets/ERP/Editor/Scenes/ERP Example Scene.unity
+    - Assets/ERP/Editor/com.ben-w.erp.asmdef
+    - Assets/ERP/Editor/com.ben-w.erp.asmdef.meta
+    - Assets/ERP/LICENSE.md.meta
+    - Assets/ERP/README.md.meta
+    - Assets/ERP/package.json
+    - Assets/ERP/package.json.meta
+    - Assets/Fire.prefab
+    - Assets/Fire.prefab.meta
+    - Assets/Fonts.meta
+    - Assets/Fonts/friz-quadrata-std.otf.meta
+    - Assets/Menus.meta
+    - Assets/Menus/Button.cs.meta
+    - Assets/Menus/StartMenu.meta
+    - Assets/Menus/StartMenu/Background.meta
+    - Assets/Menus/StartMenu/Background/BG.png.meta
+    - Assets/Menus/StartMenu/Yellow_Theme.asset
+    - Assets/Menus/StartMenu/Yellow_Theme.asset.meta
+    - Assets/Physics.meta
+    - Assets/Physics/No friction.physicsMaterial2D
+    - Assets/Physics/No friction.physicsMaterial2D.meta
     - Assets/Plugins.meta
+    - Assets/Prefabs.meta
     - Assets/Prefabs/Player.prefab
+    - Assets/Prefabs/Player.prefab.meta
+    - Assets/Prefabs/Shooting Position.prefab
+    - Assets/Prefabs/Shooting Position.prefab.meta
+    - Assets/Scenes.meta
     - Assets/Scenes/Game.unity
+    - Assets/Scenes/Game.unity.meta
+    - Assets/Scenes/StartMenu.unity
+    - Assets/Scenes/StartMenu.unity.meta
+    - Assets/Scripts.meta
+    - Assets/Scripts/BackGroundParallax.meta
     - Assets/Scripts/BackGroundParallax/Parallax.cs
     - Assets/Scripts/BackGroundParallax/Parallax.cs.meta
     - Assets/Scripts/BlobAIPersue.cs
     - Assets/Scripts/BlobAIPersue.cs.meta
     - Assets/Scripts/Blob_Enemy(unused).cs
     - Assets/Scripts/Blob_Enemy(unused).cs.meta
+    - Assets/Scripts/Camera_Script.meta
+    - Assets/Scripts/Camera_Script/Camera_Follow.cs
+    - Assets/Scripts/Camera_Script/Camera_Follow.cs.meta
+    - Assets/Scripts/Enemy.meta
     - Assets/Scripts/Enemy/EnemyAI.cs
     - Assets/Scripts/Enemy/EnemyAI.cs.meta
-    - Assets/Scripts/Enemy/EnemyBlob.cs
-    - Assets/Scripts/Enemy/EnemyBlob.cs.meta
-    - Assets/Scripts/GameTimer.meta
+    - Assets/Scripts/EnemyBlob.cs
+    - Assets/Scripts/EnemyBlob.cs.meta
+    - Assets/Scripts/Game Manager.meta
+    - Assets/Scripts/Game Manager/GeneralManager.cs.meta
+    - Assets/Scripts/PauseMenu.meta
+    - Assets/Scripts/PauseMenu/Pause.cs.meta
+    - Assets/Scripts/PauseMenu/PausedMenuScript.cs.meta
+    - Assets/Scripts/Player.meta
     - Assets/Scripts/Player/Health.meta
     - Assets/Scripts/Player/PlayerControls.cs
+    - Assets/Scripts/Player/PlayerControls.cs.meta
+    - Assets/Scripts/Player/PlayerDeathZone.cs.meta
+    - Assets/Scripts/Player/PlayerShoot.cs.meta
+    - Assets/Scripts/Player/fireSpeed.cs.meta
+    - Assets/Scripts/StartMenu.meta
+    - Assets/Scripts/StartMenu/MainMenu.cs.meta
     - Assets/Scripts/UI.meta
     - Assets/Scripts/UI/Hearts.cs
     - Assets/Scripts/UI/Hearts.cs.meta
     - Assets/Scripts/UI/Score.cs
     - Assets/Scripts/UI/Score.cs.meta
+    - Assets/Sprites.meta
+    - Assets/Sprites/Background.meta
     - Assets/Sprites/Background/Background-_pixel_art.png
     - Assets/Sprites/Background/Background-_pixel_art.png.meta
     - Assets/Sprites/Background/background-new0.png
@@ -45,23 +120,176 @@ MonoBehaviour:
     - Assets/Sprites/Background/background-new2.png.meta
     - Assets/Sprites/Background/background-new3.png
     - Assets/Sprites/Background/background-new3.png.meta
+    - Assets/Sprites/Enemy_Sprite.meta
     - Assets/Sprites/Enemy_Sprite/Blob_walk.png.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Sprite.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Sprite/plataformas_mais_finas.png.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Sprite/tiles_-_djd_copy.png.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/Main_Ground_tile.prefab
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/Main_Ground_tile.prefab.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/Platforms tile map.prefab
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/Platforms tile map.prefab.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/plataformas_mais_finas_0.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/plataformas_mais_finas_0.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/plataformas_mais_finas_1.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/plataformas_mais_finas_1.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/plataformas_mais_finas_2.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/plataformas_mais_finas_2.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_0.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_0.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_12.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_12.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_14.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_14.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_16.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_16.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_18.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_18.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_21.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_21.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_23.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_23.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_25.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_25.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_34.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_34.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_36.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_36.asset.meta
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_39.asset
+    - Assets/Sprites/Enviroment/Ground/Ground_Tile_Map/tiles_-_djd_copy_39.asset.meta
     - Assets/Sprites/Enviroment/New Material.mat
     - Assets/Sprites/Enviroment/New Material.mat.meta
+    - Assets/Sprites/Ground.png.meta
     - Assets/Sprites/Hearts.meta
     - Assets/Sprites/Hearts/dyvynj6k.bmp
     - Assets/Sprites/Hearts/dyvynj6k.bmp.meta
+    - Assets/Sprites/Player_Animation.meta
     - Assets/Sprites/Player_Animation/Player.controller
+    - Assets/Sprites/Player_Animation/Player.controller.meta
     - Assets/Sprites/Player_Animation/Player_Idlle.anim
     - Assets/Sprites/Player_Animation/Player_Idlle.anim.meta
     - Assets/Sprites/Player_Animation/Player_run.anim
     - Assets/Sprites/Player_Animation/Player_run.anim.meta
+    - Assets/Sprites/Player_Sprite.meta
+    - Assets/Sprites/Player_Sprite/Iddle.meta
     - Assets/Sprites/Player_Sprite/Iddle/Sophieprofile_idle_500.png.meta
+    - Assets/Sprites/Player_Sprite/Jump.meta
+    - Assets/Sprites/Player_Sprite/Jump/Sophieprofile_salto_para_baixo_500.png.meta
+    - Assets/Sprites/Player_Sprite/Jump/Sophieprofile_salto_para_cima_500.png.meta
+    - Assets/Sprites/Player_Sprite/Run.meta
+    - Assets/Sprites/Player_Sprite/Run/Sophieprofile_correr1_500.png.meta
+    - Assets/Sprites/Player_Sprite/Run/Sophieprofile_correr2_500.png.meta
+    - Assets/TextMesh Pro.meta
+    - Assets/TextMesh Pro/Documentation.meta
+    - Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
+    - Assets/TextMesh Pro/Fonts.meta
+    - Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt
+    - Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta
+    - Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta
+    - Assets/TextMesh Pro/Resources.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset.meta
+    - Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta
+    - Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta
+    - Assets/TextMesh Pro/Resources/Sprite Assets.meta
+    - Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+    - Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta
+    - Assets/TextMesh Pro/Resources/Style Sheets.meta
+    - Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
+    - Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta
+    - Assets/TextMesh Pro/Resources/TMP Settings.asset
+    - Assets/TextMesh Pro/Resources/TMP Settings.asset.meta
+    - Assets/TextMesh Pro/Shaders.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMPro.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta
+    - Assets/TextMesh Pro/Sprites.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne.json.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
+    - Assets/Textures.meta
+    - Assets/Textures/Effects_Fire_0_01.png.meta
+    - Assets/Textures/FireProjectile.prefab
+    - Assets/Textures/FireProjectile.prefab.meta
+    - Assets/friz-quadrata-std.otf.meta
     - Packages/manifest.json
+<<<<<<< HEAD
     - Packages/packages-lock.json
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> parent of 75e7feb (Health Basic)
+    - ProjectSettings/AudioManager.asset
+    - ProjectSettings/ClusterInputManager.asset
+    - ProjectSettings/DynamicsManager.asset
+    - ProjectSettings/EditorBuildSettings.asset
+    - ProjectSettings/EditorSettings.asset
+    - ProjectSettings/GraphicsSettings.asset
+    - ProjectSettings/InputManager.asset
+    - ProjectSettings/NavMeshAreas.asset
+    - ProjectSettings/Physics2DSettings.asset
+    - ProjectSettings/PresetManager.asset
+    - ProjectSettings/ProjectSettings.asset
+    - ProjectSettings/ProjectVersion.txt
+    - ProjectSettings/QualitySettings.asset
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> parent of 75e7feb (Health Basic)
     - ProjectSettings/TagManager.asset
+    - ProjectSettings/TimeManager.asset
+    - ProjectSettings/UnityConnectSettings.asset
+    - ProjectSettings/VFXManager.asset
+    - ProjectSettings/VersionControlSettings.asset
     - 
+<<<<<<< HEAD
+<<<<<<< Updated upstream
     m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+=======
+    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+>>>>>>> Stashed changes
+=======
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+>>>>>>> parent of 75e7feb (Health Basic)
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
