@@ -6,11 +6,13 @@ public class PlayerControls : MonoBehaviour
 {
     private Rigidbody2D rb;
     //player speed (left/right)
-    public float Playerspeed;
+    [SerializeField]
+    private float Playerspeed;
     //Input do jogador??
     private float motionInput;
     //Força de salto(editavel no editor)
-    public float jumpForce; 
+    [SerializeField]
+    private float jumpForce; 
     //Layer de ground
     private bool Grounded;
     //Empty object nos pes do jogador, em contacto com ground permite saltar
@@ -23,7 +25,6 @@ public class PlayerControls : MonoBehaviour
     private float jumpTimer;
     public float jumpTime;
     //previne double jumps
-    [SerializeField]
     private bool IsPlayerJumping;
     /* flip do jogador
     [SerializeField]
