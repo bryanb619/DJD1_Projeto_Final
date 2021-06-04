@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    [SerializeField]
-
-    private Camera cam;
-    private Transform subject;
+    public Camera cam;
+    public Transform subject;
 
     Vector2 startPosition;
 
@@ -22,7 +20,7 @@ public class Parallax : MonoBehaviour
     float parallaxFactor => Mathf.Abs(distanceFromsubject) / clippingPlane;
 
     // Start is called before the first frame update
-    private void Start()
+    public void Start()
     {
         startPosition = transform.position;
         startZ = transform.position.z;
@@ -30,7 +28,7 @@ public class Parallax : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    public void Update()
     {
         Vector2 newPos = startPosition + travel * parallaxFactor;
         transform.position = new Vector3(newPos.x, newPos.y, startZ);
