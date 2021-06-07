@@ -10,14 +10,14 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //player input (rato, lado esquerdo(0 por default))
+        //player input (Left mouse (0 por default))
         if (Input.GetButtonDown("Fire1"))
         {
-            // calling do método
+            // calling shoot method
             shoot();
 
         }
-        // Código de disparo
+        // Fire shooting mehtod
         void shoot()
         {
             Instantiate(Fire, FirePos.position, FirePos.rotation);

@@ -53,7 +53,7 @@ public class EnemyBlob : MonoBehaviour
         
         if(Barrier() || NoGround())
         {
-
+            // Debug code (CODE IS FUNCIONAL)
             Debug.Log("Hit");
             if(Enemyfacing == LEFT)
             {

@@ -16,6 +16,7 @@ public class Hearts : MonoBehaviour
 
         if(PlayerHealth <=0)
         {
+            Debug.Log("Health is at 0%");
             FindObjectOfType<PlayerControls>().PlayerDeath();
         }
     }
