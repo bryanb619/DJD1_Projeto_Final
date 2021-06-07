@@ -425,10 +425,10 @@ namespace ERP.Discord
             internal delegate Result SetCapacityMethod(IntPtr methodsPtr, UInt32 capacity);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result SetMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string key, [MarshalAs(UnmanagedType.LPStr)]string value);
+            internal delegate Result SetMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string key, [MarshalAs(UnmanagedType.LPStr)] string value);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result DeleteMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string key);
+            internal delegate Result DeleteMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string key);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate Result SetLockedMethod(IntPtr methodsPtr, bool locked);
@@ -460,7 +460,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public void SetType(LobbyType type)
@@ -543,10 +542,10 @@ namespace ERP.Discord
         internal partial struct FFIMethods
         {
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result SetMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string key, [MarshalAs(UnmanagedType.LPStr)]string value);
+            internal delegate Result SetMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string key, [MarshalAs(UnmanagedType.LPStr)] string value);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result DeleteMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string key);
+            internal delegate Result DeleteMetadataMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string key);
 
             internal SetMetadataMethod SetMetadata;
 
@@ -567,7 +566,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public void SetMetadata(string key, string value)
@@ -602,10 +600,10 @@ namespace ERP.Discord
         internal partial struct FFIMethods
         {
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result FilterMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string key, LobbySearchComparison comparison, LobbySearchCast cast, [MarshalAs(UnmanagedType.LPStr)]string value);
+            internal delegate Result FilterMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string key, LobbySearchComparison comparison, LobbySearchCast cast, [MarshalAs(UnmanagedType.LPStr)] string value);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result SortMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string key, LobbySearchCast cast, [MarshalAs(UnmanagedType.LPStr)]string value);
+            internal delegate Result SortMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string key, LobbySearchCast cast, [MarshalAs(UnmanagedType.LPStr)] string value);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate Result LimitMethod(IntPtr methodsPtr, UInt32 limit);
@@ -636,7 +634,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public void Filter(string key, LobbySearchComparison comparison, LobbySearchCast cast, string value)
@@ -702,7 +699,6 @@ namespace ERP.Discord
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct FFIEvents
         {
-
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -715,7 +711,7 @@ namespace ERP.Discord
             internal delegate Result RunCallbacksMethod(IntPtr methodsPtr);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void SetLogHookCallback(IntPtr ptr, LogLevel level, [MarshalAs(UnmanagedType.LPStr)]string message);
+            internal delegate void SetLogHookCallback(IntPtr ptr, LogLevel level, [MarshalAs(UnmanagedType.LPStr)] string message);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void SetLogHookMethod(IntPtr methodsPtr, LogLevel minLevel, IntPtr callbackData, SetLogHookCallback callback);
@@ -944,7 +940,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         private GCHandle? setLogHook;
@@ -1041,8 +1036,9 @@ namespace ERP.Discord
             Marshal.FreeHGlobal(StoreEventsPtr);
             Marshal.FreeHGlobal(VoiceEventsPtr);
             Marshal.FreeHGlobal(AchievementEventsPtr);
-            if (setLogHook.HasValue) {
-               setLogHook.Value.Free();
+            if (setLogHook.HasValue)
+            {
+                setLogHook.Value.Free();
             }
         }
 
@@ -1065,16 +1061,18 @@ namespace ERP.Discord
 
         public void SetLogHook(LogLevel minLevel, SetLogHookHandler callback)
         {
-            if (setLogHook.HasValue) {
-               setLogHook.Value.Free();
+            if (setLogHook.HasValue)
+            {
+                setLogHook.Value.Free();
             }
-             setLogHook = GCHandle.Alloc(callback);
+            setLogHook = GCHandle.Alloc(callback);
             Methods.SetLogHook(MethodsPtr, minLevel, GCHandle.ToIntPtr(setLogHook.Value), SetLogHookCallbackImpl);
         }
 
         public ApplicationManager GetApplicationManager()
         {
-            if (ApplicationManagerInstance == null) {
+            if (ApplicationManagerInstance == null)
+            {
                 ApplicationManagerInstance = new ApplicationManager(
                   Methods.GetApplicationManager(MethodsPtr),
                   ApplicationEventsPtr,
@@ -1086,7 +1084,8 @@ namespace ERP.Discord
 
         public UserManager GetUserManager()
         {
-            if (UserManagerInstance == null) {
+            if (UserManagerInstance == null)
+            {
                 UserManagerInstance = new UserManager(
                   Methods.GetUserManager(MethodsPtr),
                   UserEventsPtr,
@@ -1098,7 +1097,8 @@ namespace ERP.Discord
 
         public ImageManager GetImageManager()
         {
-            if (ImageManagerInstance == null) {
+            if (ImageManagerInstance == null)
+            {
                 ImageManagerInstance = new ImageManager(
                   Methods.GetImageManager(MethodsPtr),
                   ImageEventsPtr,
@@ -1110,7 +1110,8 @@ namespace ERP.Discord
 
         public ActivityManager GetActivityManager()
         {
-            if (ActivityManagerInstance == null) {
+            if (ActivityManagerInstance == null)
+            {
                 ActivityManagerInstance = new ActivityManager(
                   Methods.GetActivityManager(MethodsPtr),
                   ActivityEventsPtr,
@@ -1122,7 +1123,8 @@ namespace ERP.Discord
 
         public RelationshipManager GetRelationshipManager()
         {
-            if (RelationshipManagerInstance == null) {
+            if (RelationshipManagerInstance == null)
+            {
                 RelationshipManagerInstance = new RelationshipManager(
                   Methods.GetRelationshipManager(MethodsPtr),
                   RelationshipEventsPtr,
@@ -1134,7 +1136,8 @@ namespace ERP.Discord
 
         public LobbyManager GetLobbyManager()
         {
-            if (LobbyManagerInstance == null) {
+            if (LobbyManagerInstance == null)
+            {
                 LobbyManagerInstance = new LobbyManager(
                   Methods.GetLobbyManager(MethodsPtr),
                   LobbyEventsPtr,
@@ -1146,7 +1149,8 @@ namespace ERP.Discord
 
         public NetworkManager GetNetworkManager()
         {
-            if (NetworkManagerInstance == null) {
+            if (NetworkManagerInstance == null)
+            {
                 NetworkManagerInstance = new NetworkManager(
                   Methods.GetNetworkManager(MethodsPtr),
                   NetworkEventsPtr,
@@ -1158,7 +1162,8 @@ namespace ERP.Discord
 
         public OverlayManager GetOverlayManager()
         {
-            if (OverlayManagerInstance == null) {
+            if (OverlayManagerInstance == null)
+            {
                 OverlayManagerInstance = new OverlayManager(
                   Methods.GetOverlayManager(MethodsPtr),
                   OverlayEventsPtr,
@@ -1170,7 +1175,8 @@ namespace ERP.Discord
 
         public StorageManager GetStorageManager()
         {
-            if (StorageManagerInstance == null) {
+            if (StorageManagerInstance == null)
+            {
                 StorageManagerInstance = new StorageManager(
                   Methods.GetStorageManager(MethodsPtr),
                   StorageEventsPtr,
@@ -1182,7 +1188,8 @@ namespace ERP.Discord
 
         public StoreManager GetStoreManager()
         {
-            if (StoreManagerInstance == null) {
+            if (StoreManagerInstance == null)
+            {
                 StoreManagerInstance = new StoreManager(
                   Methods.GetStoreManager(MethodsPtr),
                   StoreEventsPtr,
@@ -1194,7 +1201,8 @@ namespace ERP.Discord
 
         public VoiceManager GetVoiceManager()
         {
-            if (VoiceManagerInstance == null) {
+            if (VoiceManagerInstance == null)
+            {
                 VoiceManagerInstance = new VoiceManager(
                   Methods.GetVoiceManager(MethodsPtr),
                   VoiceEventsPtr,
@@ -1206,7 +1214,8 @@ namespace ERP.Discord
 
         public AchievementManager GetAchievementManager()
         {
-            if (AchievementManagerInstance == null) {
+            if (AchievementManagerInstance == null)
+            {
                 AchievementManagerInstance = new AchievementManager(
                   Methods.GetAchievementManager(MethodsPtr),
                   AchievementEventsPtr,
@@ -1219,7 +1228,6 @@ namespace ERP.Discord
 
     internal partial class MonoPInvokeCallbackAttribute : Attribute
     {
-
     }
 
     public partial class ApplicationManager
@@ -1227,7 +1235,6 @@ namespace ERP.Discord
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct FFIEvents
         {
-
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -1252,7 +1259,7 @@ namespace ERP.Discord
             internal delegate void GetOAuth2TokenMethod(IntPtr methodsPtr, IntPtr callbackData, GetOAuth2TokenCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void GetTicketCallback(IntPtr ptr, Result result, [MarshalAs(UnmanagedType.LPStr)]ref string data);
+            internal delegate void GetTicketCallback(IntPtr ptr, Result result, [MarshalAs(UnmanagedType.LPStr)] ref string data);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void GetTicketMethod(IntPtr methodsPtr, IntPtr callbackData, GetTicketCallback callback);
@@ -1288,17 +1295,18 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         internal ApplicationManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -1424,19 +1432,20 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event CurrentUserUpdateHandler OnCurrentUserUpdate;
 
         internal UserManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -1512,7 +1521,6 @@ namespace ERP.Discord
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct FFIEvents
         {
-
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -1553,17 +1561,18 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         internal ImageManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -1615,10 +1624,10 @@ namespace ERP.Discord
         internal partial struct FFIEvents
         {
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void ActivityJoinHandler(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)]string secret);
+            internal delegate void ActivityJoinHandler(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)] string secret);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void ActivitySpectateHandler(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)]string secret);
+            internal delegate void ActivitySpectateHandler(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)] string secret);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void ActivityJoinRequestHandler(IntPtr ptr, ref User user);
@@ -1639,7 +1648,7 @@ namespace ERP.Discord
         internal partial struct FFIMethods
         {
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result RegisterCommandMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string command);
+            internal delegate Result RegisterCommandMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string command);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate Result RegisterSteamMethod(IntPtr methodsPtr, UInt32 steamId);
@@ -1666,7 +1675,7 @@ namespace ERP.Discord
             internal delegate void SendInviteCallback(IntPtr ptr, Result result);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void SendInviteMethod(IntPtr methodsPtr, Int64 userId, ActivityActionType type, [MarshalAs(UnmanagedType.LPStr)]string content, IntPtr callbackData, SendInviteCallback callback);
+            internal delegate void SendInviteMethod(IntPtr methodsPtr, Int64 userId, ActivityActionType type, [MarshalAs(UnmanagedType.LPStr)] string content, IntPtr callbackData, SendInviteCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void AcceptInviteCallback(IntPtr ptr, Result result);
@@ -1721,7 +1730,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event ActivityJoinHandler OnActivityJoin;
@@ -1734,12 +1742,14 @@ namespace ERP.Discord
 
         internal ActivityManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -1954,7 +1964,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event RefreshHandler OnRefresh;
@@ -1963,12 +1972,14 @@ namespace ERP.Discord
 
         internal RelationshipManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -2131,13 +2142,13 @@ namespace ERP.Discord
             internal delegate void ConnectLobbyCallback(IntPtr ptr, Result result, ref Lobby lobby);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void ConnectLobbyMethod(IntPtr methodsPtr, Int64 lobbyId, [MarshalAs(UnmanagedType.LPStr)]string secret, IntPtr callbackData, ConnectLobbyCallback callback);
+            internal delegate void ConnectLobbyMethod(IntPtr methodsPtr, Int64 lobbyId, [MarshalAs(UnmanagedType.LPStr)] string secret, IntPtr callbackData, ConnectLobbyCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void ConnectLobbyWithActivitySecretCallback(IntPtr ptr, Result result, ref Lobby lobby);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void ConnectLobbyWithActivitySecretMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string activitySecret, IntPtr callbackData, ConnectLobbyWithActivitySecretCallback callback);
+            internal delegate void ConnectLobbyWithActivitySecretMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string activitySecret, IntPtr callbackData, ConnectLobbyWithActivitySecretCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void DisconnectLobbyCallback(IntPtr ptr, Result result);
@@ -2152,7 +2163,7 @@ namespace ERP.Discord
             internal delegate Result GetLobbyActivitySecretMethod(IntPtr methodsPtr, Int64 lobbyId, StringBuilder secret);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result GetLobbyMetadataValueMethod(IntPtr methodsPtr, Int64 lobbyId, [MarshalAs(UnmanagedType.LPStr)]string key, StringBuilder value);
+            internal delegate Result GetLobbyMetadataValueMethod(IntPtr methodsPtr, Int64 lobbyId, [MarshalAs(UnmanagedType.LPStr)] string key, StringBuilder value);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate Result GetLobbyMetadataKeyMethod(IntPtr methodsPtr, Int64 lobbyId, Int32 index, StringBuilder key);
@@ -2170,7 +2181,7 @@ namespace ERP.Discord
             internal delegate Result GetMemberUserMethod(IntPtr methodsPtr, Int64 lobbyId, Int64 userId, ref User user);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result GetMemberMetadataValueMethod(IntPtr methodsPtr, Int64 lobbyId, Int64 userId, [MarshalAs(UnmanagedType.LPStr)]string key, StringBuilder value);
+            internal delegate Result GetMemberMetadataValueMethod(IntPtr methodsPtr, Int64 lobbyId, Int64 userId, [MarshalAs(UnmanagedType.LPStr)] string key, StringBuilder value);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate Result GetMemberMetadataKeyMethod(IntPtr methodsPtr, Int64 lobbyId, Int64 userId, Int32 index, StringBuilder key);
@@ -2351,7 +2362,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event LobbyUpdateHandler OnLobbyUpdate;
@@ -2372,12 +2382,14 @@ namespace ERP.Discord
 
         internal LobbyManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -2894,7 +2906,7 @@ namespace ERP.Discord
             internal delegate void MessageHandler(IntPtr ptr, UInt64 peerId, byte channelId, IntPtr dataPtr, Int32 dataLen);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void RouteUpdateHandler(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)]string routeData);
+            internal delegate void RouteUpdateHandler(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)] string routeData);
 
             internal MessageHandler OnMessage;
 
@@ -2911,10 +2923,10 @@ namespace ERP.Discord
             internal delegate Result FlushMethod(IntPtr methodsPtr);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result OpenPeerMethod(IntPtr methodsPtr, UInt64 peerId, [MarshalAs(UnmanagedType.LPStr)]string routeData);
+            internal delegate Result OpenPeerMethod(IntPtr methodsPtr, UInt64 peerId, [MarshalAs(UnmanagedType.LPStr)] string routeData);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result UpdatePeerMethod(IntPtr methodsPtr, UInt64 peerId, [MarshalAs(UnmanagedType.LPStr)]string routeData);
+            internal delegate Result UpdatePeerMethod(IntPtr methodsPtr, UInt64 peerId, [MarshalAs(UnmanagedType.LPStr)] string routeData);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate Result ClosePeerMethod(IntPtr methodsPtr, UInt64 peerId);
@@ -2963,7 +2975,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event MessageHandler OnMessage;
@@ -2972,12 +2983,14 @@ namespace ERP.Discord
 
         internal NetworkManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -3144,7 +3157,7 @@ namespace ERP.Discord
             internal delegate void OpenGuildInviteCallback(IntPtr ptr, Result result);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void OpenGuildInviteMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string code, IntPtr callbackData, OpenGuildInviteCallback callback);
+            internal delegate void OpenGuildInviteMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string code, IntPtr callbackData, OpenGuildInviteCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void OpenVoiceSettingsCallback(IntPtr ptr, Result result);
@@ -3189,19 +3202,20 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event ToggleHandler OnToggle;
 
         internal OverlayManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -3303,47 +3317,46 @@ namespace ERP.Discord
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct FFIEvents
         {
-
         }
 
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct FFIMethods
         {
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result ReadMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name, byte[] data, Int32 dataLen, ref UInt32 read);
+            internal delegate Result ReadMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name, byte[] data, Int32 dataLen, ref UInt32 read);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void ReadAsyncCallback(IntPtr ptr, Result result, IntPtr dataPtr, Int32 dataLen);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void ReadAsyncMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name, IntPtr callbackData, ReadAsyncCallback callback);
+            internal delegate void ReadAsyncMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name, IntPtr callbackData, ReadAsyncCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void ReadAsyncPartialCallback(IntPtr ptr, Result result, IntPtr dataPtr, Int32 dataLen);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void ReadAsyncPartialMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name, UInt64 offset, UInt64 length, IntPtr callbackData, ReadAsyncPartialCallback callback);
+            internal delegate void ReadAsyncPartialMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name, UInt64 offset, UInt64 length, IntPtr callbackData, ReadAsyncPartialCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result WriteMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name, byte[] data, Int32 dataLen);
+            internal delegate Result WriteMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name, byte[] data, Int32 dataLen);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void WriteAsyncCallback(IntPtr ptr, Result result);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate void WriteAsyncMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name, byte[] data, Int32 dataLen, IntPtr callbackData, WriteAsyncCallback callback);
+            internal delegate void WriteAsyncMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name, byte[] data, Int32 dataLen, IntPtr callbackData, WriteAsyncCallback callback);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result DeleteMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name);
+            internal delegate Result DeleteMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result ExistsMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name, ref bool exists);
+            internal delegate Result ExistsMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name, ref bool exists);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate void CountMethod(IntPtr methodsPtr, ref Int32 count);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-            internal delegate Result StatMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)]string name, ref FileStat stat);
+            internal delegate Result StatMethod(IntPtr methodsPtr, [MarshalAs(UnmanagedType.LPStr)] string name, ref FileStat stat);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             internal delegate Result StatAtMethod(IntPtr methodsPtr, Int32 index, ref FileStat stat);
@@ -3394,17 +3407,18 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         internal StorageManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -3647,7 +3661,6 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event EntitlementCreateHandler OnEntitlementCreate;
@@ -3656,12 +3669,14 @@ namespace ERP.Discord
 
         internal StoreManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -3896,19 +3911,20 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event SettingsUpdateHandler OnSettingsUpdate;
 
         internal VoiceManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }
@@ -4103,19 +4119,20 @@ namespace ERP.Discord
                 }
                 return (FFIMethods)MethodsStructure;
             }
-
         }
 
         public event UserAchievementUpdateHandler OnUserAchievementUpdate;
 
         internal AchievementManager(IntPtr ptr, IntPtr eventsPtr, ref FFIEvents events)
         {
-            if (eventsPtr == IntPtr.Zero) {
+            if (eventsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
             InitEvents(eventsPtr, ref events);
             MethodsPtr = ptr;
-            if (MethodsPtr == IntPtr.Zero) {
+            if (MethodsPtr == IntPtr.Zero)
+            {
                 throw new ResultException(Result.InternalError);
             }
         }

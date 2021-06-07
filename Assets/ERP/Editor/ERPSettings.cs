@@ -1,11 +1,8 @@
 ﻿#if UNITY_EDITOR
+
 using System;
 using System.IO;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
 using System.Xml.Serialization;
-using UnityEngine;
 
 namespace ERP
 {
@@ -22,7 +19,9 @@ namespace ERP
         public long LastSessionID;
         public bool Errored;
 
-        public ERPSettings() { }
+        public ERPSettings()
+        {
+        }
 
         public ERPSettings(bool showSceneName, bool showProjectName, bool resetOnSceneChange, bool debugMode, bool editorClosed, long lastTimestamp, long lastSessionID, bool errored)
         {
@@ -72,6 +71,6 @@ namespace ERP
             ERP.Log("Saved Settings");
         }
     }
-
 }
+
 #endif

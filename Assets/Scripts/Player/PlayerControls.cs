@@ -26,11 +26,11 @@ public class PlayerControls : MonoBehaviour
     public float jumpTime;
     //previne double jumps
     private bool IsPlayerJumping;
+
     /* flip do jogador
     [SerializeField]
     private bool isFacingRight = true;
     */
-
 
     void Start()
     {
@@ -69,7 +69,17 @@ public class PlayerControls : MonoBehaviour
             IsPlayerJumping = false;
 
         }
+        /*
+        if(IsPlayerDead)
+        {
+            return;
+        } */
     }
+    public void PlayerDeath()   
+    {
+        FindObjectOfType<GeneralManager>().Restart();
+    }   
+
     /*
     private void Flip() serve para dar flip do gun point (jogador nao disparar em si próprio)
     {

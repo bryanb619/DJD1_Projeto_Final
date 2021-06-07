@@ -5,8 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 
 public class EnemyCollision : MonoBehaviour
-{
-    
+{   
+    int HealthDecay = 20;
+    // Looks for 
     void StartTriggering()
     {
         InitTrigger();
@@ -18,12 +19,14 @@ public class EnemyCollision : MonoBehaviour
         GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
-    // detection of collision (takes health, not now...)
+    // detection of collision ("DEBUG REQUIRED")
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
-        {
-            Debug.Log($"{name} Contact");
+        {   
+            Debug.Log($"{name} Contact with Player");
+            FindObjectOfType<Hearts>().LoseLife(HealthDecay);
+            
         }
     }
 }

@@ -1,12 +1,14 @@
 using System;
-using System.Runtime.InteropServices;
+
 #if UNITY_EDITOR || UNITY_STANDALONE
+
 using UnityEngine;
+
 #endif
 
 namespace ERP.Discord
 {
-	public partial struct ImageHandle
+    public partial struct ImageHandle
     {
         static public ImageHandle User(Int64 id)
         {
@@ -40,6 +42,7 @@ namespace ERP.Discord
         }
 
 #if UNITY_EDITOR || UNITY_STANDALONE
+
         public Texture2D GetTexture(ImageHandle handle)
         {
             var dimensions = GetDimensions(handle);
@@ -48,6 +51,7 @@ namespace ERP.Discord
             texture.Apply();
             return texture;
         }
+
 #endif
     }
 }

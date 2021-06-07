@@ -1,8 +1,7 @@
 ﻿#if UNITY_EDITOR
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 using UnityEditor;
+using UnityEngine;
 
 namespace ERP
 {
@@ -16,6 +15,7 @@ namespace ERP
             _window = (ERPWindow)GetWindow(typeof(ERPWindow), false, "Editor Rich Presence");
             _window.Show();
         }
+
         private void OnGUI()
         {
             if (ERP.discord == null && !ERP.Failed)
@@ -71,7 +71,6 @@ namespace ERP
                 Application.OpenURL("https://assetstore.unity.com/packages/tools/utilities/editor-rich-presence-178736");
             }
             GUILayout.EndHorizontal();
-
         }
 
         private bool ToggleButton(string trueText, string falseText, ref bool value)
@@ -90,4 +89,5 @@ namespace ERP
         }
     }
 }
+
 #endif

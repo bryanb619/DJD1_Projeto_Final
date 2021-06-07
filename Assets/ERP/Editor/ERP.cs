@@ -1,15 +1,12 @@
 ﻿#if UNITY_EDITOR
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor.SceneManagement;
-using UnityEditor;
-using System.IO;
-using System.Threading.Tasks;
-using System.Threading;
+
 using ERP.Discord;
+using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 namespace ERP
@@ -21,7 +18,6 @@ namespace ERP
         private const string prefix = "<b>ERP</b>";
 
         public static Discord.Discord discord { get; private set; }
-
 
         public static string projectName { get; private set; }
         public static string sceneName { get; private set; }
@@ -35,16 +31,19 @@ namespace ERP
         public static bool Errored = false;
 
         public static bool Failed;
+
         static ERP()
         {
             ERPSettings.GetSettings();
             DelayStart();
         }
+
         public static async void DelayStart(int delay = 1000)
         {
             await Task.Delay(delay);
             Init();
         }
+
         public static void Init()
         {
             if (Errored && lastSessionID == EditorAnalyticsSessionInfo.id)
@@ -106,8 +105,8 @@ namespace ERP
         {
             if (discord != null)
                 discord.RunCallbacks();
-
         }
+
         public static void UpdateActivity()
         {
             Log("Updating Activity");
@@ -146,6 +145,7 @@ namespace ERP
 
             ERPSettings.SaveSettings();
         }
+
         public static long GetTimestamp()
         {
             if (!resetOnSceneChange)
@@ -159,16 +159,19 @@ namespace ERP
             Log("Got time stamp: " + unixTimestamp);
             return unixTimestamp;
         }
+
         public static void Log(object message)
         {
             if (debugMode)
                 Debug.Log(prefix + ": " + message);
         }
+
         public static void LogWarning(object message)
         {
             if (debugMode)
                 Debug.LogWarning(prefix + ": " + message);
         }
+
         public static void LogError(object message)
         {
             Debug.LogError(prefix + ": " + message);
@@ -187,7 +190,7 @@ namespace ERP
             }
             return processes.Length != 0;
         }
-
     }
 }
+
 #endif
