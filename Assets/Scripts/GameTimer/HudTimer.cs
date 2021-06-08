@@ -27,8 +27,4 @@ public class HudTimer : MonoBehaviour
         // conversion to string
         timerText.text = startTime.ToString("F2");
     }
-    
-       
-
-    
 }
