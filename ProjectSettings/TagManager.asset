@@ -7,6 +7,7 @@ TagManager:
   - enemy_01
   - enemy_tag
   - Action
+  - DeathZone
   layers:
   - Default
   - TransparentFX
