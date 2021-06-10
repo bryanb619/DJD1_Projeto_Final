@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - enemy_01
-  - enemy_tag
   - Action
   - DeathZone
+  - MovingPlatform
+  - Enemy
   layers:
   - Default
   - TransparentFX

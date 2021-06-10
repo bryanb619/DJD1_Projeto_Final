@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 public class RestartMenu : MonoBehaviour
 {
     public void RestartButton ()
-    {   
+    {   Debug.Log("Game was Loaded");
         SceneManager.LoadScene("Game");
+    }
+    public void MainMenuButton()
+    {   
+        Debug.Log("Menu is loaded");
+        SceneManager.LoadScene("StartMenu");
     }
     public void QuitButton ()
     {   

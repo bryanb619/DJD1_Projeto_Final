@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {   
-    int HealthDecay = 20;
+    int HealthDecay = 25;
     // Looks for 
     void StartTriggering()
     {

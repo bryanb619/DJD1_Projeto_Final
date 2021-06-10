@@ -4,16 +4,16 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 
-public class DeathZone : MonoBehaviour
+public class DeadZone : MonoBehaviour
 {   
     int HealthDecay = 100;
     // Looks for 
-    void Start()
+    void StartTriggering()
     {
-        Trigger();
+        TriggerPlayer();
     }
 
-    void Trigger()
+    void TriggerPlayer()
     {
         //  Turns trigger on
         GetComponent<BoxCollider2D>().isTrigger = true;
@@ -24,7 +24,7 @@ public class DeathZone : MonoBehaviour
     {
         if(collision.tag == "Player")
         {   
-            Debug.Log($"{name} Contact with Player");
+            Debug.Log($"{name} Death zone Killed Player");
             FindObjectOfType<Hearts>().LoseLife(HealthDecay);
             
         }

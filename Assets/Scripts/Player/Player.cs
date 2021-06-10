@@ -1,9 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControls : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    // Variables
     private Rigidbody2D rb;
     //player speed (left/right)
     [SerializeField]
@@ -17,15 +18,20 @@ public class PlayerControls : MonoBehaviour
     private bool Grounded;
     //Empty object nos pes do jogador, em contacto com ground permite saltar
     public Transform PlayerFeet;
+    public Transform PlatformChecker;
     public float checkRadius;
     // para ser usado em superficies liquidas como agua, lama e etc...
-    public LayerMask whatIsGround;
+    [SerializeField] private LayerMask whatIsGround;
     //temporazidores de salto
     [SerializeField]
     private float jumpTimer;
     public float jumpTime;
     //previne double jumps
     private bool IsPlayerJumping;
+    protected int hearts;
+    public int nHearts => hearts;
+
+
 
     /* flip do jogador
     [SerializeField]
@@ -35,6 +41,7 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        gameObject.tag = "movingPlatform";
 
     }
 
@@ -69,17 +76,27 @@ public class PlayerControls : MonoBehaviour
             IsPlayerJumping = false;
 
         }
-        /*
-        if(IsPlayerDead)
-        {
-            return;
-        } */
     }
+    // Not Working yet
+    void OnCollissionEnter(Collider collision)
+        {
+            if(collision.tag == "movingPlatform")
+            {   
+                Debug.Log("Hit Platform");
+                this.transform.parent = collision.transform;
+            }
+        }
+        void OnCollissionExit(Collider collision)
+        {
+            if(collision.gameObject.name.Equals("movingPlatform"))
+            {
+                this.transform.parent = null;
+            }
+        }    
     public void PlayerDeath()   
     {
         FindObjectOfType<GeneralManager>().Restart();
     }   
-
     /*
     private void Flip() serve para dar flip do gun point (jogador nao disparar em si próprio)
     {
