@@ -21,15 +21,16 @@ public class Player : MonoBehaviour
     public Transform PlatformChecker;
     public float checkRadius;
     // para ser usado em superficies liquidas como agua, lama e etc...
-    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] 
+    private LayerMask whatIsGround;
     //temporazidores de salto
     [SerializeField]
     private float jumpTimer;
     public float jumpTime;
     //previne double jumps
     private bool IsPlayerJumping;
-    protected int hearts;
-    public int nHearts => hearts;
+    // Player flip Bool
+    private bool isFacingRight;
 
 
 
@@ -41,14 +42,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        gameObject.tag = "movingPlatform";
-
+        // player starts looking to the right
+        isFacingRight = true;
     }
 
     void FixedUpdate()
     {
         motionInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(motionInput * Playerspeed, rb.velocity.y);
+        PlayerFlip(motionInput);
     }
     void Update()
     {
@@ -97,11 +99,18 @@ public class Player : MonoBehaviour
     {
         FindObjectOfType<GeneralManager>().Restart();
     }   
-    /*
-    private void Flip() serve para dar flip do gun point (jogador nao disparar em si próprio)
+    // player flip right to left
+    private void PlayerFlip(float motionInput) // (jogador nao disparar em si próprio)
     {
-        isFacingRight = !isFacingRight;
-        transform.Rotate(0f, 180, 0f);
+        if(motionInput > 0 && !isFacingRight || motionInput < 0 && isFacingRight)
+        {   
+            isFacingRight = !isFacingRight;
+            Vector3 theScale = transform.localScale;
+
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
+
+      
     }
-    */
 }
