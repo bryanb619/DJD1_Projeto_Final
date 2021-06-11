@@ -1,14 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class fireSpeed : MonoBehaviour
 {
-    [SerializeField]
     // Bullet Speed
+    [SerializeField]
     private float speed = 20f;
     // Fire Ball damage
-    private int damage = 15;
+    private int damage = 20;
 
     public Rigidbody2D rb;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class fireSpeed : MonoBehaviour
     // Collision detection 
     void OnTriggerEnter2D(Collider2D Contact)
     {
-        Debug.Log("contact.name");
+        Debug.Log("Blob Hit");
 
         BlobHealth enemy = Contact.GetComponent<BlobHealth>();
         if ( enemy != null)

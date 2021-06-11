@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
     //previne double jumps
     private bool IsPlayerJumping;
     // Player flip Bool
-    private bool isFacingRight;
+    // player starts looking to the right
+    private bool isFacingRight = true;
     //
     [SerializeField]
     private float fallMultiplier;
@@ -49,15 +50,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // player starts looking to the right
-        isFacingRight = true;
+        
+        
     }
 
     void FixedUpdate()
     {
         motionInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(motionInput * Playerspeed, rb.velocity.y);
-        PlayerFlip(motionInput);
+        Flip(motionInput);
     }
     void Update()
     {
@@ -115,7 +116,18 @@ public class Player : MonoBehaviour
     public void PlayerDeath()   
     {
         FindObjectOfType<GeneralManager>().Restart();
-    }   
+    }  
+
+     private void Flip(float motionInput)
+     {
+         if(motionInput > 0 && !isFacingRight || motionInput < 0 && isFacingRight)
+         {
+            isFacingRight = !isFacingRight;
+            transform.Rotate(0f, 180f, 0f);
+         }
+
+     }
+    /*
     // player flip right to left
     private void PlayerFlip(float motionInput) // (jogador nao disparar em si próprio)
     {
@@ -126,8 +138,13 @@ public class Player : MonoBehaviour
 
             theScale.x *= -1;
             transform.localScale = theScale;
+
+
+            // isFacingRight = !isFacingRight;
+            transform.Rotate(0f, 180f, 0f);
         }
 
       
     }
+    */
 }
