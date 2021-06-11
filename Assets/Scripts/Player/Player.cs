@@ -31,6 +31,13 @@ public class Player : MonoBehaviour
     private bool IsPlayerJumping;
     // Player flip Bool
     private bool isFacingRight;
+    //
+    [SerializeField]
+    private float fallMultiplier;
+    [SerializeField]
+    private float lowJumpMultiplier;
+
+
 
 
 
@@ -77,6 +84,16 @@ public class Player : MonoBehaviour
         {
             IsPlayerJumping = false;
 
+        }
+        // Gravity extra pull to fix floatness issues
+        if(rb.velocity.y < 0)
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier -1) * Time.deltaTime;
+
+        }
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        {   
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier -1) * Time.deltaTime;
         }
     }
     // Not Working yet
