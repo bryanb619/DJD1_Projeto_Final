@@ -8,7 +8,7 @@ public class fireSpeed : MonoBehaviour
     // Bullet Speed
     private float speed = 20f;
     // Fire Ball damage
-    private int damage = 20;
+    private int damage = 15;
 
     public Rigidbody2D rb;
     // Start is called before the first frame update
