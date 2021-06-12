@@ -23,6 +23,6 @@ public class VolumeSlider : MonoBehaviour
     // Slider button
     public void VolumeUpdater(float volume)
     {
-
+        GameVolume = volume;
     }
 }
