@@ -6,7 +6,7 @@ public class BlobHealth : MonoBehaviour
 {
     // variables
     // Blob Health
-    public int blobHealth;
+    private int blobHealth = 120;
     
     // damage method
     public void BlobDamage( int damage)

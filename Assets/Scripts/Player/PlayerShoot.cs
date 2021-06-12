@@ -21,7 +21,7 @@ public class PlayerShoot : MonoBehaviour
         void shoot()
         {
             Instantiate(Fire, FirePos.position, FirePos.rotation);
-
+            
         }
 
 

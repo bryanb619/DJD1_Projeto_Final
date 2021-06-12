@@ -96,7 +96,18 @@ public class Player : MonoBehaviour
         {   
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier -1) * Time.deltaTime;
         }
+    
     }
+    // Player flip direction (used specially for shooting)
+     private void Flip(float motionInput)
+     {
+         if(motionInput > 0 && !isFacingRight || motionInput < 0 && isFacingRight)
+         {
+            isFacingRight = !isFacingRight;
+            transform.Rotate(0f, 180f, 0f);
+         }
+
+     }
     // Not Working yet
     void OnCollissionEnter(Collider collision)
         {
@@ -117,17 +128,8 @@ public class Player : MonoBehaviour
     {
         FindObjectOfType<GeneralManager>().Restart();
     }  
-
-     private void Flip(float motionInput)
-     {
-         if(motionInput > 0 && !isFacingRight || motionInput < 0 && isFacingRight)
-         {
-            isFacingRight = !isFacingRight;
-            transform.Rotate(0f, 180f, 0f);
-         }
-
-     }
-    /*
+    
+    /* UNSUSED
     // player flip right to left
     private void PlayerFlip(float motionInput) // (jogador nao disparar em si próprio)
     {
@@ -141,10 +143,8 @@ public class Player : MonoBehaviour
 
 
             // isFacingRight = !isFacingRight;
-            transform.Rotate(0f, 180f, 0f);
-        }
-
-      
+            //transform.Rotate(0f, 180f, 0f);
+        }     
     }
     */
 }
