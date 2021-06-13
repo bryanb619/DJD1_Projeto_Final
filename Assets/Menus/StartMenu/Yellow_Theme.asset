@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Yellow_Theme
   m_EditorClassIdentifier: 
   colorMode: 3
-  topLeft: {r: 1, g: 0.85566986, b: 0, a: 1}
-  topRight: {r: 1, g: 0.71115816, b: 0, a: 1}
-  bottomLeft: {r: 1, g: 0.85490197, b: 0, a: 1}
-  bottomRight: {r: 1, g: 0.66086817, b: 0, a: 1}
+  topLeft: {r: 1, g: 1, b: 1, a: 1}
+  topRight: {r: 1, g: 1, b: 1, a: 1}
+  bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+  bottomRight: {r: 1, g: 1, b: 1, a: 1}
