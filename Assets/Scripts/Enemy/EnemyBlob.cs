@@ -4,40 +4,34 @@ using UnityEngine;
 
 public class EnemyBlob : MonoBehaviour
 {
+    // Variables
+    // Blob Rigidbody2D
     Rigidbody2D blob_rb;
-
+    // Raycast Position
     [SerializeField]
     private Transform castPos;
-    // enemy speed
+    // Blob speed
     [SerializeField]
     private float speed;
-    //
-    [SerializeField]
-    private float baseCastDist; 
-
-    // enemy rotation (left and right)
-    const string LEFT = "left";
-    const string RIGHT = "right";
-
-    string Enemyfacing;
-
+    // Size of Raycast line 
+    [SerializeField] 
+    private float baseCastDist;
+    // enemy constant string rotation (left and right)
+    private const string LEFT = "left";
+    private const string RIGHT = "right";
+    // Enemy Facing direction
+    private string Enemyfacing;
     Vector3 baseScale;
    
-
     // Start is called before the first frame update
     void Start()
-    {   // 
+    {   
+        // 
         baseScale = transform.localScale;
+        // righ by default
         Enemyfacing = RIGHT;
+        // standard Rigidbody2D
         blob_rb = GetComponent<Rigidbody2D>();
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     void FixedUpdate()
     {   
@@ -48,13 +42,13 @@ public class EnemyBlob : MonoBehaviour
         {
             xSpeed = -speed;
         }
-        // blob speed
+        // blob speed normal speed
         blob_rb.velocity = new Vector2(xSpeed, blob_rb.velocity.y);
-        
+
+        // if hit barrier or no ground
         if(Barrier() || NoGround())
         {
-            // Debug code (CODE IS FUNCIONAL)
-            Debug.Log("Hit");
+           
             if(Enemyfacing == LEFT)
             {
                 changeDir(RIGHT);
@@ -89,9 +83,10 @@ public class EnemyBlob : MonoBehaviour
         
     }
 
-    // Wall/Barrier colision prevention bool
+    // Wall/Barrier colision prevention booleans
     bool Barrier()
     {
+        // false by default
         bool value = false;
 
         float castDist =  baseCastDist;
@@ -105,6 +100,7 @@ public class EnemyBlob : MonoBehaviour
         {
             castDist = baseCastDist;
         }
+        
 
         // Line Casting direction
         Vector3 targetPos = castPos.position;
@@ -123,13 +119,14 @@ public class EnemyBlob : MonoBehaviour
         {
             value = false;
         }
-
+        // returns to method value (true or false)
         return value;
     }
 
     // End of ground detection
     bool NoGround()
     {
+        // false by default
         bool value = true;
 
         float castDist =  baseCastDist;
@@ -137,7 +134,7 @@ public class EnemyBlob : MonoBehaviour
         Vector3 targetPos = castPos.position;
         targetPos.y -= castDist;
 
-        // Line inside Unity Editor
+        // Line inside Unity Editor 
         Debug.DrawLine(castPos.position, targetPos, Color.green);
 
         // Line detection
@@ -150,8 +147,7 @@ public class EnemyBlob : MonoBehaviour
         {
             value = true;
         }
-        // returns method value
+        // returns to method value (true or false)
         return value;
-    }
-    
+    }  
 }

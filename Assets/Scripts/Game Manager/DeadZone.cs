@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class DeadZone : MonoBehaviour
 {   
-    int HealthDecay = 100;
+    private int HealthDecay = 100;
     // Looks for 
     void StartTriggering()
-    {
+    {   
+        // calls trigger
         TriggerPlayer();
     }
-
+    // Trigger on Method
     void TriggerPlayer()
     {
         //  Turns trigger on
@@ -24,7 +25,9 @@ public class DeadZone : MonoBehaviour
     {
         if(collision.tag == "Player")
         {   
+            // Debug
             Debug.Log($"{name} Death zone Killed Player");
+            // Use Hearts.cs, method LoseLife to apply damage
             FindObjectOfType<Hearts>().LoseLife(HealthDecay);
             
         }

@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HudTimer : MonoBehaviour
-{
-    // Starting time = zero
+{   
+    // Variables
+    // Starting time = zero as normal stopwatch
     public float startTime;
-    // UI Text in canvas
+    // UI Text in canvas (Game Scene)
     public Text timerText;
 
     // Start is called before the first frame update

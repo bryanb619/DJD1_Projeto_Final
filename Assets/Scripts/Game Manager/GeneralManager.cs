@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GeneralManager : MonoBehaviour
 {   
     
-    // method de respawn
+    // restart Scene will be loaded if player out of health
     public void Restart()
     {
         SceneManager.LoadScene("RestartMenu");

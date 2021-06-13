@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class RestartMenu : MonoBehaviour
 {
+    // Restart button
     public void RestartButton ()
     {   Debug.Log("Game was Loaded");
         SceneManager.LoadScene("Game");
     }
+    // menu button
     public void MainMenuButton()
     {   
         Debug.Log("Menu is loaded");
         SceneManager.LoadScene("StartMenu");
     }
+    // quit button
     public void QuitButton ()
     {   
         Application.Quit();
-        // Para saber se funciona, remover este código em versão futura
         Debug.Log("Game was Quitted");
     }
 }

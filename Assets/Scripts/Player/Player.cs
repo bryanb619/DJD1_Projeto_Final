@@ -5,72 +5,71 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variables
+    // Rigidbody2D
     private Rigidbody2D rb;
     //player speed (left/right)
     [SerializeField]
     private float Playerspeed;
-    //Input do jogador??
+    // Player input
     private float motionInput;
     //Força de salto(editavel no editor)
     [SerializeField]
     private float jumpForce; 
     //Layer de ground
     private bool Grounded;
-    //Empty object nos pes do jogador, em contacto com ground permite saltar
+    // Layer detection (operates like a feet, if feet in air, no jump)
     public Transform PlayerFeet;
     public Transform PlatformChecker;
+    // Radius of layer check
     public float checkRadius;
-    // para ser usado em superficies liquidas como agua, lama e etc...
+    // To be defined what is jumpable on
     [SerializeField] 
     private LayerMask whatIsGround;
-    //temporazidores de salto
+    // Jump timer
     [SerializeField]
     private float jumpTimer;
     public float jumpTime;
     //previne double jumps
     private bool IsPlayerJumping;
     // Player flip Bool
-    // player starts looking to the right
+    // player starts looking to the right, so true
     private bool isFacingRight = true;
-    //
+    // extra Fall force to player 
     [SerializeField]
     private float fallMultiplier;
+    //
     [SerializeField]
     private float lowJumpMultiplier;
 
-
-
-
-
-    /* flip do jogador
-    [SerializeField]
-    private bool isFacingRight = true;
-    */
-
+    // Start is called before the first frame update
     void Start()
     {
+        // Player Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
-        
-        
     }
 
     void FixedUpdate()
     {
+        // motionInput
         motionInput = Input.GetAxis("Horizontal");
+        // Player speed
         rb.velocity = new Vector2(motionInput * Playerspeed, rb.velocity.y);
+        // If player switches direction call this method
         Flip(motionInput);
     }
     void Update()
     {
         Grounded = Physics2D.OverlapCircle(PlayerFeet.position, checkRadius, whatIsGround);
-       
-        // códgio de salto
+
+        // Jump conditions
+        // if space is hit 
         if(Grounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             IsPlayerJumping = true;
             jumpTimer = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
         }
+        // if space is hold
         if(Input.GetKey(KeyCode.Space) && IsPlayerJumping == true)
         {
             if (jumpTimer > 0)
@@ -86,7 +85,7 @@ public class Player : MonoBehaviour
             IsPlayerJumping = false;
 
         }
-        // Gravity extra pull to fix floatness issues
+        //  extra Gravity pull to fix floatness issues
         if(rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier -1) * Time.deltaTime;
@@ -100,15 +99,17 @@ public class Player : MonoBehaviour
     }
     // Player flip direction (used specially for shooting)
      private void Flip(float motionInput)
-     {
-         if(motionInput > 0 && !isFacingRight || motionInput < 0 && isFacingRight)
-         {
+     {  
+        //checks for player input (left or right)
+        if(motionInput > 0 && !isFacingRight || motionInput < 0 && isFacingRight)
+        {
             isFacingRight = !isFacingRight;
+            // rotate 180 on Y axis (flip)
             transform.Rotate(0f, 180f, 0f);
-         }
-
+        }
      }
     // Not Working yet
+    // Platform parenting
     void OnCollissionEnter(Collider collision)
         {
             if(collision.tag == "movingPlatform")
@@ -123,13 +124,15 @@ public class Player : MonoBehaviour
             {
                 this.transform.parent = null;
             }
-        }    
+        } 
+    // Player Death Method   
     public void PlayerDeath()   
     {
+        // Load Restart Scene
         FindObjectOfType<GeneralManager>().Restart();
     }  
     
-    /* UNSUSED
+    /* UNUSED TO BE DELETED
     // player flip right to left
     private void PlayerFlip(float motionInput) // (jogador nao disparar em si próprio)
     {

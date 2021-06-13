@@ -369,8 +369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 155}
-  m_SizeDelta: {x: 574.78, y: 122.71}
+  m_AnchoredPosition: {x: 0, y: 173}
+  m_SizeDelta: {x: 637.26, y: 122.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400135700
 MonoBehaviour:
@@ -405,7 +405,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Score is: ( TESTING)'
+  m_Text: 
 --- !u!222 &400135701
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1031,8 +1031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 374}
-  m_SizeDelta: {x: 661.28, y: 179.39}
+  m_AnchoredPosition: {x: 0, y: 378}
+  m_SizeDelta: {x: 743.65, y: 198.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204637488
 MonoBehaviour:
@@ -1056,11 +1056,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: aa360424bd41b8747aba126eddc752f2, type: 3}
-    m_FontSize: 100
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 110
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

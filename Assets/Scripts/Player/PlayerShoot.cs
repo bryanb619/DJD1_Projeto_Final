@@ -25,7 +25,7 @@ public class PlayerShoot : MonoBehaviour
         {
             // creeate Fireball 
             Instantiate(Fire, FirePos.position, FirePos.rotation);
-
+            
         }
     }
 }
