@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Variables
+    
+    // Components
     // Rigidbody2D
     private Rigidbody2D rb;
+
+    private CapsuleCollider2D cc;
+
+    // Variables
     //player speed (left/right)
     [SerializeField]
     private float Playerspeed;
@@ -22,7 +27,6 @@ public class Player : MonoBehaviour
     public Transform PlatformChecker;
     // Radius of layer check
     public float checkRadius;
-    // To be defined what is jumpable on
     [SerializeField] 
     private LayerMask whatIsGround;
     // Jump timer
@@ -40,6 +44,10 @@ public class Player : MonoBehaviour
     //
     [SerializeField]
     private float lowJumpMultiplier;
+    //
+    public PhysicsMaterial2D Friction;
+    public PhysicsMaterial2D noFriction;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,10 +60,14 @@ public class Player : MonoBehaviour
     {
         // motionInput
         motionInput = Input.GetAxis("Horizontal");
+
         // Player speed
         rb.velocity = new Vector2(motionInput * Playerspeed, rb.velocity.y);
+
+
         // If player switches direction call this method
         Flip(motionInput);
+
     }
     void Update()
     {
@@ -108,6 +120,7 @@ public class Player : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
         }
      }
+
     // Not Working yet
     // Platform parenting
     void OnCollissionEnter(Collider collision)

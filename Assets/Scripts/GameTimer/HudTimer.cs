@@ -8,7 +8,7 @@ public class HudTimer : MonoBehaviour
 {   
     // Variables
     // Starting time = zero as normal stopwatch
-    public float startTime;
+    private float startTime =0f;
     // UI Text in canvas (Game Scene)
     public Text timerText;
 
@@ -16,7 +16,7 @@ public class HudTimer : MonoBehaviour
     void Start()
     {
         // float to string conversion
-        timerText.text = startTime.ToString("F2"); 
+        timerText.text = startTime.ToString("F2");
 
     }
     // Update is called once per frame

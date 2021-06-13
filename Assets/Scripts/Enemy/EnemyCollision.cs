@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider2D))]
 
 public class EnemyCollision : MonoBehaviour
-{   
+{   // Damage on player
     int damage = 25;
     // Looks for 
     void StartTriggering()
