@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 
 public class EnemyCollision : MonoBehaviour
 {   
@@ -16,7 +16,7 @@ public class EnemyCollision : MonoBehaviour
     void InitTrigger()
     {
         //  Turns trigger on
-        GetComponent<BoxCollider2D>().isTrigger = true;
+        GetComponent<CapsuleCollider2D>().isTrigger = true;
     }
 
     // detection of collision ("DEBUG REQUIRED")

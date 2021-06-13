@@ -22,13 +22,13 @@ public class FireBall : MonoBehaviour
     // Collision detection 
     void OnTriggerEnter2D(Collider2D Contact)
     {
-        // DEBUG
-        Debug.Log("Blob Hit");
+        
         // Search for for blob health script
         BlobHealth enemy = Contact.GetComponent<BlobHealth>();
         // inflict damage X on blob
         if ( enemy != null)
-        {   //  
+        {   // DEBUG
+            Debug.Log("Blob Hit"); 
             enemy.BlobDamage(damage);
         }
         // Remove GameObject from scene
