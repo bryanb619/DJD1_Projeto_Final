@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(CircleCollider2D))]
 
 public class EnemyCollision : MonoBehaviour
 {   
-    int HealthDecay = 25;
+    int damage = 25;
     // Looks for 
     void StartTriggering()
     {
@@ -25,10 +25,11 @@ public class EnemyCollision : MonoBehaviour
         if(collision.tag == "Player")
         {   
             Debug.Log($"{name} Contact with Player");
-            FindObjectOfType<Hearts>().LoseLife(HealthDecay);
+            FindObjectOfType<Hearts>().LoseLife(damage);
             
         }
     }
 }
+
 
 

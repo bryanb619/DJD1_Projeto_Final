@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    // Variables
+    // Fire shooting location
     public Transform FirePos;
+    // Fire ball object
     public GameObject Fire;
 
     // Update is called once per frame
@@ -20,10 +23,9 @@ public class PlayerShoot : MonoBehaviour
         // Fire shooting mehtod
         void shoot()
         {
+            // creeate Fireball 
             Instantiate(Fire, FirePos.position, FirePos.rotation);
             
         }
-
-
     }
 }
