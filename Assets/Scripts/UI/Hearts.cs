@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 public class Hearts : MonoBehaviour
 {
+    // Health bar image
     public Image Lives;
-    public int PlayerHealth;
+    private int PlayerHealth = 100;
     public void LoseLife(int value)
     {
         if(PlayerHealth <=0)
