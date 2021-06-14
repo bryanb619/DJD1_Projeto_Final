@@ -29,7 +29,6 @@ public class DeadZone : MonoBehaviour
             Debug.Log($"{name} Death zone Killed Player");
             // Use Hearts.cs, method LoseLife to apply damage
             FindObjectOfType<Hearts>().LoseLife(HealthDecay);
-            
         }
     }
 }

@@ -19,6 +19,7 @@ public class MovingPlatforms : MonoBehaviour
     // update every FPS
     void Update()
     {
+        // call next point
         NextPoint();
     }
     void NextPoint()

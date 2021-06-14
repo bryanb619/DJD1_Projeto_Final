@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
     //
     [SerializeField]
     private float lowJumpMultiplier;
+    public Animator playerAnimator;
+
     //
     public PhysicsMaterial2D Friction;
     public PhysicsMaterial2D noFriction;
@@ -63,6 +65,9 @@ public class Player : MonoBehaviour
 
         // Player speed
         rb.velocity = new Vector2(motionInput * Playerspeed, rb.velocity.y);
+        // run animation
+        playerAnimator.SetFloat("speed", Mathf.Abs(motionInput));
+
 
 
         // If player switches direction call this method
@@ -80,6 +85,8 @@ public class Player : MonoBehaviour
             IsPlayerJumping = true;
             jumpTimer = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
+            // jump animation
+            playerAnimator.SetBool("IsJumping", true);
         }
         // if space is hold
         if(Input.GetKey(KeyCode.Space) && IsPlayerJumping == true)
@@ -90,7 +97,8 @@ public class Player : MonoBehaviour
                 jumpTimer -= Time.deltaTime;
             }
             else IsPlayerJumping = false;
-                
+            playerAnimator.SetBool("IsJumping", false);
+
         }
         if(Input.GetKeyUp(KeyCode.Space))
         {
