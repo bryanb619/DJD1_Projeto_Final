@@ -6,7 +6,7 @@ public class EnemyBlob : MonoBehaviour
 {
     // Variables
     // Blob Rigidbody2D
-    Rigidbody2D blob_rb;
+    private Rigidbody2D blob_rb;
     // Raycast Position
     [SerializeField]
     private Transform castPos;

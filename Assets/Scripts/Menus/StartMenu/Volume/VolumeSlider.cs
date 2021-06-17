@@ -5,7 +5,7 @@ using UnityEngine;
 public class VolumeSlider : MonoBehaviour
 {
     public AudioSource AudioSource;
-    private float GameVolume = 1f;
+    private float GameVolume = 0.4f;
 
     // Start is called before the first frame update
     void Start()

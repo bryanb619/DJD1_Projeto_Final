@@ -65,10 +65,8 @@ public class Player : MonoBehaviour
 
         // Player speed
         rb.velocity = new Vector2(motionInput * Playerspeed, rb.velocity.y);
-        // run animation
+        // run animation using mathF to use - speed neverless
         playerAnimator.SetFloat("speed", Mathf.Abs(motionInput));
-
-
 
         // If player switches direction call this method
         Flip(motionInput);
@@ -77,7 +75,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Grounded = Physics2D.OverlapCircle(PlayerFeet.position, checkRadius, whatIsGround);
-
         // Jump conditions
         // if space is hit 
         if(Grounded == true && Input.GetKeyDown(KeyCode.Space))
