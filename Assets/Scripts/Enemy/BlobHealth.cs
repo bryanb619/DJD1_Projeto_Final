@@ -6,6 +6,9 @@ public class BlobHealth : MonoBehaviour
 {
     // variables
     // Blob Health
+    public Transform dropPoint;
+    public bool drops;
+    public GameObject theDrop; 
     [SerializeField]
     private int blobHealth = 120; 
     
@@ -17,6 +20,7 @@ public class BlobHealth : MonoBehaviour
         // if true call death method
         if (blobHealth <= 0)
         {
+            if (drops) Instantiate(theDrop, dropPoint.position, dropPoint.rotation);
             // Call death method
             BlobDeath();
         }
