@@ -23,6 +23,7 @@ public class potionPoison : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+
             Debug.Log($"{name} Poisoned Player");
 
             // find hearts.cs loselife void (mudar aqui)

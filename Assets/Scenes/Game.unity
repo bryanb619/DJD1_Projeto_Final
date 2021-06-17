@@ -788,6 +788,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &351817187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4532,6 +4535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &595427985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4761,7 +4767,7 @@ PrefabInstance:
     - target: {fileID: 3705656692568097963, guid: b6357ef5874f51d4cacbaad75eb64665,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.03
+      value: -40.7
       objectReference: {fileID: 0}
     - target: {fileID: 3705656692568097963, guid: b6357ef5874f51d4cacbaad75eb64665,
         type: 3}
@@ -6594,6 +6600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &1160693477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7035,6 +7044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &1217905518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7605,6 +7617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &1292878833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7938,7 +7953,7 @@ PrefabInstance:
     - target: {fileID: 6189434143692296026, guid: 4421a06521ad9fd4491ad87b3993f24b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -61.8
+      value: -37.4
       objectReference: {fileID: 0}
     - target: {fileID: 6189434143692296026, guid: 4421a06521ad9fd4491ad87b3993f24b,
         type: 3}
@@ -8165,6 +8180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &1392579362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8812,6 +8830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &1484122678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9394,6 +9415,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &1539061392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9555,6 +9579,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4534bd5d4f0b68b4da7b92950f9b6188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 25
+  lol: 0
+  damageTime: 1
 --- !u!68 &1560037671
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -9657,6 +9684,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lives: {fileID: 1329027545}
+  currentHealth: 0
+  CurrentDamageTime: 0
+  healthbar: {fileID: 0}
+  damage: 0
 --- !u!1 &1575518867
 GameObject:
   m_ObjectHideFlags: 0
@@ -9782,6 +9813,7 @@ GameObject:
   - component: {fileID: 1596517571}
   - component: {fileID: 1596517572}
   - component: {fileID: 1596517573}
+  - component: {fileID: 1596517574}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -9855,9 +9887,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9874,6 +9906,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1596517572}
+--- !u!114 &1596517574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596517570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d7faabde164c241b2a6a10c2d0192c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lives: {fileID: 0}
+  currentHealth: 0
+  CurrentDamageTime: 0
+  healthbar: {fileID: 0}
+  damage: 0
 --- !u!1 &1619088940
 GameObject:
   m_ObjectHideFlags: 0
@@ -10500,6 +10549,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &1711735697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39772,6 +39824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &2095378147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40127,6 +40182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba1bcef2addc4449100b64b0d24d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
+  currentHealth: 0
+  Maxhealth: 100
 --- !u!114 &2142128365
 MonoBehaviour:
   m_ObjectHideFlags: 0
