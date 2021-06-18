@@ -27,8 +27,8 @@ public class potionHealth : MonoBehaviour
 
             //  Find hearts script Gain Life void and appy health gain
             FindObjectOfType<Hearts>().GainLife(healthGain);
-
-            //
+            
+            // Destroy potion 
             Destroy(gameObject);
         }
     }

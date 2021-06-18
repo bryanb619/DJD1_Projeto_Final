@@ -8,7 +8,7 @@ public class HudTimer : MonoBehaviour
 {   
     // Variables
     // Starting time = zero as normal stopwatch
-    private float startTime =0f;
+    private float startTime = 0.0f;
     // UI Text in canvas (Game Scene)
     public Text timerText;
 

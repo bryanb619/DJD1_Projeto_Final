@@ -11,6 +11,7 @@ public class TokenCollector : MonoBehaviour
     private float token = 0;
     // Text Token on UI 
     public Text TokenCounter;
+    private int points = 20;
 
     // on collision event
     private void OnTriggerEnter2D(Collider2D tok)

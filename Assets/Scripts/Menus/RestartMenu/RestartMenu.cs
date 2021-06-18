@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class RestartMenu : MonoBehaviour
 {
+    // UI buttons
+
     // Restart button
     public void RestartButton ()
     {   Debug.Log("Game was Loaded");
@@ -22,4 +24,6 @@ public class RestartMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Game was Quitted");
     }
+
+
 }

@@ -34,25 +34,7 @@ public class Hearts : MonoBehaviour
             FindObjectOfType<Player>().PlayerDeath();
         }
     }
-    // add life method
-    public void GainLife(int value)
-    {
-        // if heatlh is less than max health appply more life
-        if (PlayerHealth < Maxhealth)
-        {
-            // player health + value (health gain,from potionHealth.cs)
-            PlayerHealth += value;
+ 
 
-            // Fill amount
-            Lives.fillAmount = PlayerHealth / 100;
-        }
-    }
-
-    public void Decreaser(float value)
-    {
-
-
-        
-    }
 }
 

@@ -7,7 +7,10 @@ public class BlobHealth : MonoBehaviour
     // variables
     // Blob Health
     [SerializeField]
-    private int blobHealth = 120; 
+    private int blobHealth = 120;
+    // points for blob death
+    private int points = 10;
+
     
     // damage method
     // uses damage variable from Fireball.cs 
@@ -16,20 +19,15 @@ public class BlobHealth : MonoBehaviour
         blobHealth -= PlayerHit;
         // if true call death method
         if (blobHealth <= 0)
-        {
+        { 
             // Call death method
             BlobDeath();
-        }
-        // DEBUG CODE (check!)
-        if (blobHealth == 60)
-        {
-            Debug.Log("Health at 50%");
+
         }
     }
     // Blob Death Method
     void BlobDeath()
     {
         Destroy(gameObject);
-
     }
 }

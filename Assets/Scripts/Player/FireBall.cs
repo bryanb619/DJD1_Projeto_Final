@@ -5,9 +5,11 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
     // Variables
+
     // Bullet Speed
     [SerializeField]
     private float speed = 20f;
+
     // Fire Ball damage
     private int damage = 20;
     // Rigidbody2D
