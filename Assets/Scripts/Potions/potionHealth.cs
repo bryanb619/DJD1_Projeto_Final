@@ -5,7 +5,7 @@ using UnityEngine;
 public class potionHealth : MonoBehaviour
 {
     // Damage on player
-    int healthGain = 25;
+    int healthGain = 15;
     // Looks for trigger
     void StartTriggering()
     {
